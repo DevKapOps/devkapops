@@ -1,123 +1,163 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kapil Bansal — Senior DevOps Engineer</title>
-  <meta name="description" content="DevOps Engineer Portfolio | Cloud, CI/CD, Kubernetes, Automation" />
+  <title>Kapil Bansal | Senior DevOps Engineer</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap
 
   <style>
     :root {
-      --bg: #020617;
-      --bg-soft: #020617ee;
-      --card: #020617;
-      --accent: #22d3ee;
+      --bg: #070714;
+      --bg-dark: #05050f;
+      --card: #0d0d1f;
+      --accent: #8b5cf6;
+      --accent-soft: #a78bfa;
       --text: #e5e7eb;
-      --muted: #94a3b8;
-      --border: #1e293b;
+      --muted: #9ca3af;
+      --border: #1f2937;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at right, #2b1055, var(--bg-dark) 55%);
       color: var(--text);
-      background: radial-gradient(circle at top, #020617, #020617 60%, #000);
       line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
 
-    .container { max-width: 1100px; margin: auto; padding: 80px 24px; }
+    /* ---------- NAVBAR ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(7,7,20,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #c7d2fe;
+    }
+
+    .nav-links a {
+      margin: 0 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .contact-btn {
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #05050f;
+      font-weight: 600;
+      box-shadow: 0 0 30px #8b5cf655;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    h1, h2 { letter-spacing: -0.02em; }
+
+    h2 {
+      font-size: 2.3rem;
+      margin-bottom: 14px;
+    }
+
+    p.sub {
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
 
     /* ---------- HERO ---------- */
     header {
-      min-height: 100vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
     }
 
-    .hero-title {
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 700;
     }
 
-    .accent { color: var(--accent); }
+    .hero span {
+      color: var(--accent-soft);
+    }
 
-    .hero-subtitle {
+    .hero p {
       margin-top: 24px;
-      font-size: 1.25rem;
-      color: var(--muted);
       max-width: 720px;
-    }
-
-    .hero-actions {
-      margin-top: 40px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, #0f172a, #020617);
-      font-weight: 600;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), #38bdf8);
-      color: #020617;
-      border: none;
-      box-shadow: 0 0 30px #22d3ee66;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    /* ---------- SECTIONS ---------- */
-    section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    section p {
       color: var(--muted);
-      max-width: 850px;
+      font-size: 1.15rem;
     }
 
-    /* ---------- GRID ---------- */
-    .grid {
+    /* ---------- EXPERIENCE TIMELINE ---------- */
+    .timeline {
+      margin-top: 50px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+      gap: 30px;
     }
 
-    .card {
-      background: linear-gradient(180deg, #020617, #020617aa);
+    .timeline-card {
+      background: linear-gradient(120deg, rgba(139,92,246,0.18), var(--card) 40%);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
-      transition: transform .25s ease, border .25s ease;
+      border-radius: 18px;
+      padding: 28px 30px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent);
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent), transparent);
     }
 
-    .card h3 { margin-bottom: 12px; }
+    .timeline-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
 
-    .card ul { padding-left: 20px; color: var(--muted); }
+    .role {
+      color: var(--accent-soft);
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
 
-    /* ---------- PROJECTS ---------- */
-    .project p { margin-top: 8px; }
+    .timeline-card p {
+      color: var(--muted);
+    }
 
     /* ---------- FOOTER ---------- */
     footer {
@@ -125,110 +165,57 @@
       padding: 40px 24px;
       text-align: center;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
-
-    .social a {
-      margin: 0 14px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .social a:hover { color: var(--accent); }
 
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="container">
-    <div>
-      <h1 class="hero-title">Hi, I'm <span class="accent">Kapil Bansal</span></h1>
-      <p class="hero-subtitle">DevOps Engineer specializing in Cloud Infrastructure, CI/CD Automation, Kubernetes, and Production Reliability.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn">Contact Me</a>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Kapil Bansal</div>
+      <div class="nav-links">
+        <a href="#summary">Summary</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
       </div>
+      <a href="#contact" class="contact-btn">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="container hero" id="summary">
+    <div>
+      <h1>DevOps & <span>Platform Engineer</span></h1>
+      <p>Building scalable cloud platforms, modern CI/CD pipelines, and reliable infrastructure across enterprises.</p>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section class="container">
-    <h2>About Me</h2>
-    <p>
-      I build secure, scalable, and automated systems for modern cloud-native platforms. 
-      My focus is on infrastructure as code, continuous delivery, observability, and DevSecOps.
-      I care deeply about reliability, performance, and clean automation.
-    </p>
-  </section>
+  <!-- EXPERIENCE -->
+  <section class="container" id="experience">
+    <h2>Experience Timeline</h2>
+    <p class="sub">Leading DevOps initiatives across multiple industries and geographies.</p>
 
-  <!-- SKILLS -->
-  <section class="container">
-    <h2>Core Skills</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>☁ Cloud</h3>
-        <ul>
-          <li>AWS, Azure, GCP</li>
-          <li>Networking & IAM</li>
-          <li>Cost Optimization</li>
-        </ul>
+    <div class="timeline">
+      <div class="timeline-card">
+        <h3>DevOps Manager</h3>
+        <div class="role">Enterprise Clients · 2020 – Present</div>
+        <p>Owning platform strategy, mentoring engineers, and driving adoption of secure CI/CD, cloud platforms, and Kubernetes-based solutions.</p>
       </div>
-      <div class="card">
-        <h3>⚙ DevOps</h3>
-        <ul>
-          <li>Docker & Kubernetes</li>
-          <li>Terraform & Helm</li>
-          <li>Linux & Bash</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3> CI/CD</h3>
-        <ul>
-          <li>GitHub Actions</li>
-          <li>Azure DevOps</li>
-          <li>Jenkins</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3> Security</h3>
-        <ul>
-          <li>Secrets Management</li>
-          <li>Container Scanning</li>
-          <li>DevSecOps</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="container">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card project">
-        <h3>Production Kubernetes Platform</h3>
-        <p>EKS cluster built with Terraform, GitOps deployments, monitoring, logging, and auto-scaling.</p>
+      <div class="timeline-card">
+        <h3>Senior DevOps Engineer</h3>
+        <div class="role">Multiple Clients · 2015 – 2020</div>
+        <p>Implemented CI/CD pipelines, container platforms, cloud migrations, monitoring, and DevSecOps practices across large enterprises.</p>
       </div>
-      <div class="card project">
-        <h3>Secure CI/CD Pipelines</h3>
-        <p>End-to-end pipelines with quality gates, security scans, and automated rollbacks.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>Open to DevOps, Platform Engineering, and Cloud Infrastructure roles.</p>
-    <div class="social" style="margin-top:30px;">
-      <a href="mailto:kapilbansal380@gmail.com">Email</a>
-      https://github.com/DevKapOps
-      <a href="https://www.linkedin.com/in/kapil-bansal-125101243/">LinkedIn</a>
     </div>
   </section>
 
   <footer>
-    © 2026 Your Name · Built with HTML, CSS & DevOps mindset
+    © 2026 Kapil Bansal · DevOps · Cloud · Automation
   </footer>
 
 </body>
