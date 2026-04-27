@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +21,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -32,10 +32,8 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ---------- NAVBAR ---------- */
     nav {
-      position: sticky;
-      top: 0;
+      position: sticky; top: 0;
       background: rgba(7,7,20,0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -43,180 +41,146 @@
     }
 
     .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: 1200px; margin: auto; padding: 18px 24px;
+      display: flex; justify-content: space-between; align-items: center;
     }
 
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: #c7d2fe;
-    }
+    .logo { font-weight: 700; letter-spacing: .15em; color: #c7d2fe; }
+    .nav-links a { margin: 0 16px; font-size: .95rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
 
-    .nav-links a {
-      margin: 0 18px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .contact-btn {
-      padding: 10px 22px;
-      border-radius: 999px;
+    .cta {
+      padding: 10px 22px; border-radius: 999px;
       background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-      color: #05050f;
-      font-weight: 600;
-      box-shadow: 0 0 30px #8b5cf655;
+      color: #05050f; font-weight: 600;
+      box-shadow: 0 0 35px #8b5cf666;
     }
 
-    /* ---------- SECTIONS ---------- */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 24px;
-    }
+    .container { max-width: 1100px; margin: auto; padding: 90px 24px; }
+    h2 { font-size: 2.3rem; margin-bottom: 14px; }
+    p.sub { color: var(--muted); margin-bottom: 40px; }
 
-    h1, h2 { letter-spacing: -0.02em; }
+    header { min-height: 90vh; display: flex; align-items: center; }
+    .hero h1 { font-size: clamp(3rem,6vw,4.5rem); }
+    .hero span { color: var(--accent-soft); }
+    .hero p { margin-top: 24px; max-width: 760px; color: var(--muted); }
 
-    h2 {
-      font-size: 2.3rem;
-      margin-bottom: 14px;
-    }
+    .hero-actions { margin-top: 36px; display: flex; gap: 20px; }
 
-    p.sub {
-      color: var(--muted);
-      margin-bottom: 40px;
-    }
+    section { animation: reveal 1s ease both; }
+    @keyframes reveal { from { opacity:0; transform:translateY(40px);} to{opacity:1;} }
 
-    /* ---------- HERO ---------- */
-    header {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-    }
+    .skills { display: flex; flex-wrap: wrap; gap: 14px; }
+    .pill { padding: 11px 18px; border-radius: 999px; border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(139,92,246,.25), rgba(139,92,246,.05));
+      box-shadow: 0 0 18px #8b5cf633; font-size: .9rem; }
 
-    .hero h1 {
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      font-weight: 700;
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 30px; }
+    .card { background: linear-gradient(120deg, rgba(139,92,246,.18), var(--card) 40%);
+      border:1px solid var(--border); border-radius:20px; padding:26px; }
 
-    .hero span {
-      color: var(--accent-soft);
-    }
+    .card:hover { transform: translateY(-6px); box-shadow:0 0 40px #8b5cf655; transition:.3s; }
 
-    .hero p {
-      margin-top: 24px;
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.15rem;
-    }
+    .timeline { display: grid; gap: 28px; }
+    .timeline-card { position:relative; padding:28px 30px; border-radius:18px; background: linear-gradient(120deg, rgba(139,92,246,.18), var(--card) 40%); border:1px solid var(--border); }
+    .timeline-card::before { content:''; position:absolute; left:0; top:0; width:6px; height:100%; background:linear-gradient(var(--accent),transparent); }
+    .role { color: var(--accent-soft); margin-bottom:10px; font-size:.9rem; }
 
-    /* ---------- EXPERIENCE TIMELINE ---------- */
-    .timeline {
-      margin-top: 50px;
-      display: grid;
-      gap: 30px;
-    }
-
-    .timeline-card {
-      background: linear-gradient(120deg, rgba(139,92,246,0.18), var(--card) 40%);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .timeline-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 6px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-
-    .timeline-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 6px;
-    }
-
-    .role {
-      color: var(--accent-soft);
-      font-size: 0.9rem;
-      margin-bottom: 14px;
-    }
-
-    .timeline-card p {
-      color: var(--muted);
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 24px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
+    footer { border-top:1px solid var(--border); padding:40px 24px; text-align:center; color:var(--muted); font-size:.85rem; }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-container">
-      <div class="logo">Kapil Bansal</div>
-      <div class="nav-links">
-        <a href="#summary">Summary</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-      </div>
-      <a href="#contact" class="contact-btn">Contact</a>
+<nav>
+  <div class="nav-container">
+    <div class="logo">KAPIL BANSAL</div>
+    <div class="nav-links">
+      <a href="#summary">Summary</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certs">Certifications</a>
     </div>
-  </nav>
+    <a href="#contact" class="cta">Contact</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <header class="container hero" id="summary">
-    <div>
-      <h1>DevOps & <span>Platform Engineer</span></h1>
-      <p>Building scalable cloud platforms, modern CI/CD pipelines, and reliable infrastructure across enterprises.</p>
+<header class="container hero" id="summary">
+  <div>
+    <h1>Senior <span>DevOps Engineer</span></h1>
+    <p>DevOps & Platform Engineer with 12+ years of experience across Azure, AWS, Kubernetes, Terraform, GitOps and SRE practices. Proven expertise in building highly available, secure and cost-optimized cloud-native platforms at scale.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="cta">View Projects</a>
+      <a href="Kapil_DevOps_Resume_Apr26.pdf" class="cta">Download Resume</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- EXPERIENCE -->
-  <section class="container" id="experience">
-    <h2>Experience Timeline</h2>
-    <p class="sub">Leading DevOps initiatives across multiple industries and geographies.</p>
+<section class="container" id="skills">
+  <h2>Core Skills</h2>
+  <p class="sub">Cloud, Kubernetes, CI/CD, Security & Automation</p>
+  <div class="skills">
+    <span class="pill">AWS</span><span class="pill">Azure</span><span class="pill">Kubernetes (EKS, AKS)</span><span class="pill">Docker</span>
+    <span class="pill">Terraform</span><span class="pill">Helm</span><span class="pill">GitOps (ArgoCD)</span><span class="pill">GitLab CI</span>
+    <span class="pill">GitHub Actions</span><span class="pill">Prometheus</span><span class="pill">Grafana</span><span class="pill">Loki</span>
+    <span class="pill">Trivy</span><span class="pill">Ansible</span><span class="pill">Linux</span><span class="pill">DevSecOps</span>
+  </div>
+</section>
 
-    <div class="timeline">
-      <div class="timeline-card">
-        <h3>DevOps Manager</h3>
-        <div class="role">Enterprise Clients · 2020 – Present</div>
-        <p>Owning platform strategy, mentoring engineers, and driving adoption of secure CI/CD, cloud platforms, and Kubernetes-based solutions.</p>
-      </div>
-
-      <div class="timeline-card">
-        <h3>Senior DevOps Engineer</h3>
-        <div class="role">Multiple Clients · 2015 – 2020</div>
-        <p>Implemented CI/CD pipelines, container platforms, cloud migrations, monitoring, and DevSecOps practices across large enterprises.</p>
-      </div>
+<section class="container" id="projects">
+  <h2>Key Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>GitOps Multi-Cluster Kubernetes Platform</h3>
+      <p>Architected GitOps-based deployment across 50+ clusters using ArgoCD, Helm and Terraform, achieving zero-downtime releases and ~70% reduction in manual effort.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Enterprise Infrastructure Automation Platform</h3>
+      <p>Built self-service automation with Ansible, Rundeck and GitLab CI, reducing operational task execution time by 70–80% and improving platform reliability.</p>
+    </div>
+    <div class="card">
+      <h3>On-Prem to AWS Cloud Migration</h3>
+      <p>Led migration of legacy workloads to AWS with HA, DR, and cost optimization, achieving 99.9% availability and 50–60% ops overhead reduction.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Kapil Bansal · DevOps · Cloud · Automation
-  </footer>
+<section class="container" id="experience">
+  <h2>Experience Timeline</h2>
+  <div class="timeline">
+    <div class="timeline-card">
+      <h3>Senior DevOps Engineer – Platform Services</h3>
+      <div class="role">Phoenix Contact India · Oct 2022 – Present</div>
+      <p>Leading cloud & Kubernetes platforms, GitOps adoption, IaC standardization, DevSecOps integration, SRE practices and observability across large-scale hybrid environments.</p>
+    </div>
+    <div class="timeline-card">
+      <h3>Cloud Solutions Architect</h3>
+      <div class="role">Dynacons Systems · Nov 2018 – Oct 2022</div>
+      <p>Designed and operated AWS & Azure platforms, Kubernetes environments, CI/CD pipelines, cloud security and large-scale migrations.</p>
+    </div>
+    <div class="timeline-card">
+      <h3>Cloud Engineer / Linux Administrator</h3>
+      <div class="role">Earlier Roles · 2013 – 2018</div>
+      <p>Managed Linux systems, AWS infrastructure, monitoring, backup, recovery and incident management for production environments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="certs">
+  <h2>Training & Certifications</h2>
+  <div class="skills">
+    <span class="pill">AWS SAA</span><span class="pill">AWS SAP</span><span class="pill">AWS Advanced Networking</span>
+    <span class="pill">AZ-104</span><span class="pill">AZ-204</span><span class="pill">AZ-305</span><span class="pill">AZ-400</span><span class="pill">AZ-700</span>
+    <span class="pill">CKA</span><span class="pill">CKAD</span><span class="pill">CKS</span><span class="pill">ITIL v4</span>
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <h2>Contact</h2>
+  <p class="sub">Delhi, India · kapilbansal380@gmail.com · LinkedIn</p>
+</section>
+
+<footer>© 2026 Kapil Bansal · Senior DevOps Engineer</footer>
 
 </body>
 </html>
