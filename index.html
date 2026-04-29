@@ -13,7 +13,6 @@
             --muted: #94a3b8;
             --border: #334155;
             --bar-bg: #1e293b;
-            /* Using a cohesive font stack across the entire UI */
             --font-main: 'Inter', 'Segoe UI', Roboto, Helvetica, sans-serif;
         }
 
@@ -21,20 +20,18 @@
         html { scroll-behavior: smooth; }
         body { font-family: var(--font-main); background-color: var(--bg); color: var(--text); line-height: 1.6; padding-top: 80px; overflow-x: hidden; }
 
-        /* Navbar Refinement */
+        /* Navbar */
         nav { 
             position: fixed; top: 0; width: 100%; height: 80px; 
             background: rgba(11, 2, 20, 0.9); border-bottom: 1px solid var(--border);
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 10%; z-index: 1000; backdrop-filter: blur(15px);
         }
-        /* Fixed: Large, cohesive font for the Name Logo */
         .nav-brand { 
             font-size: 1.6rem; 
             font-weight: 800; 
             letter-spacing: -0.02em; 
             color: #fff; 
-            font-family: var(--font-main);
             text-transform: uppercase;
         }
         .nav-links a { text-decoration: none; color: var(--muted); margin-left: 2rem; font-size: 0.95rem; transition: 0.3s; font-weight: 500; }
@@ -42,12 +39,22 @@
         .contact-btn { border: 1px solid var(--accent); color: white !important; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: 0.3s; }
         .contact-btn:hover { background: var(--accent); box-shadow: 0 0 15px var(--accent); }
 
+        /* Hero with Photo */
         section { padding: 5rem 10%; max-width: 1400px; margin: auto; }
-        .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; border-left: 5px solid var(--accent); padding-left: 20px; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* Hero */
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 4rem; flex-wrap: wrap; min-height: 50vh; }
+        .hero-text { flex: 1; min-width: 320px; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
-        .hero p { color: var(--muted); font-size: 1.3rem; max-width: 850px; }
+        .hero p { color: var(--muted); font-size: 1.3rem; max-width: 600px; }
+        
+        .profile-container { position: relative; width: 300px; height: 300px; }
+        .profile-photo { 
+            width: 100%; height: 100%; object-fit: cover; border-radius: 24px; 
+            border: 2px solid var(--border); box-shadow: 0 0 20px rgba(168, 85, 247, 0.2); 
+            transition: 0.4s ease; 
+        }
+        .profile-photo:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 0 40px rgba(168, 85, 247, 0.4); }
+
+        .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; border-left: 5px solid var(--accent); padding-left: 20px; text-transform: uppercase; letter-spacing: 2px; }
 
         /* Skills Dashboard */
         .skills-container { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; }
@@ -59,44 +66,39 @@
         .tool-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1rem; }
         .tool-tag { padding: 6px 14px; background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 6px; font-size: 0.85rem; color: #d8b4fe; }
 
-        /* Certifications Full List */
-        .cert-badge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .cert-card { 
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            padding: 2rem; 
-            border-radius: 16px; 
-            text-align: center; 
-            transition: 0.3s; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .cert-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .cert-card img { width: 100px; height: 100px; margin-bottom: 15px; object-fit: contain; }
-        .cert-card p { font-size: 0.9rem; font-weight: 700; color: #fff; }
-        .cert-card span { font-size: 0.75rem; color: var(--muted); margin-top: 5px; }
-
-        /* Projects & Experience */
+        /* Projects */
         .project-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
         .project-card { background: var(--card-bg); border: 1px solid var(--border); padding: 2.5rem; border-radius: 16px; cursor: pointer; transition: 0.3s; }
         .project-card:hover { border-color: var(--accent); transform: scale(1.02); }
+        .project-card h3 { color: var(--accent); margin-bottom: 10px; }
+
+        /* Experience */
         .exp-item { background: var(--card-bg); border: 1px solid var(--border); padding: 2.5rem; border-radius: 20px; margin-bottom: 2rem; }
-        .exp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .exp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 10px; }
         .exp-role { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
-        .exp-date { color: var(--muted); font-size: 0.9rem; }
-        .exp-company { font-weight: 600; color: #fff; margin-bottom: 1rem; display: block; }
+        .exp-date { color: var(--muted); font-size: 0.9rem; font-weight: 600; }
+        .exp-company { font-weight: 600; color: #fff; margin-bottom: 1rem; display: block; font-size: 1.1rem; }
         .exp-bullets { list-style: none; }
         .exp-bullets li { position: relative; padding-left: 25px; margin-bottom: 10px; color: var(--muted); font-size: 0.95rem; }
         .exp-bullets li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
 
+        /* Certifications */
+        .cert-badge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .cert-card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; border-radius: 16px; text-align: center; transition: 0.3s; display: flex; flex-direction: column; align-items: center; }
+        .cert-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .cert-card img { width: 80px; height: 80px; margin-bottom: 15px; object-fit: contain; filter: drop-shadow(0 0 8px var(--accent)); }
+        .cert-card p { font-size: 0.9rem; font-weight: 700; color: #fff; }
+
         /* Modals */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: none; z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
         .modal.active { display: flex; }
-        .modal-content { background: var(--card-bg); width: 90%; max-width: 800px; padding: 4rem; border-radius: 24px; border: 1px solid var(--accent); position: relative; }
+        .modal-content { background: var(--card-bg); width: 90%; max-width: 800px; padding: 4rem; border-radius: 24px; border: 1px solid var(--accent); position: relative; max-height: 90vh; overflow-y: auto; }
         .close-btn { position: absolute; top: 30px; right: 30px; font-size: 2.5rem; color: var(--muted); cursor: pointer; }
 
-        @media (max-width: 900px) { .nav-links { display: none; } .skills-container { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -113,9 +115,16 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Senior DevOps Leader</h1>
-        <p>12+ years of expertise in orchestrating high-availability platforms, GitOps automation, and Cloud-native transformations.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Senior DevOps Leader</h1>
+            <p>12+ years of production experience orchestrating high-availability platforms, GitOps automation, and enterprise Cloud-native transformations.</p>
+        </div>
+        <div class="profile-container">
+            <!-- Ensure your photo is named profile.jpg -->
+            <img src="./profile.jpg" alt="Kapil Bansal" class="profile-photo">
+        </div>
     </section>
 
     <!-- Skills Dashboard -->
@@ -124,19 +133,19 @@
         <div class="skills-container">
             <div class="skill-box">
                 <div class="skill-item">
-                    <div class="skill-label"><span>Kubernetes Ecosystem</span><span>95%</span></div>
+                    <div class="skill-label"><span>Kubernetes Ecosystem (EKS/AKS/Self-Managed)</span><span>95%</span></div>
                     <div class="progress-bg"><div class="progress-fill" data-width="95%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-label"><span>Cloud Arch (Azure/AWS)</span><span>92%</span></div>
-                    <div class="progress-bg"><div class="progress-fill" data-width="92%"></div></div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-label"><span>Infrastructure as Code</span><span>94%</span></div>
+                    <div class="skill-label"><span>Infrastructure as Code (Terraform/Terragrunt)</span><span>94%</span></div>
                     <div class="progress-bg"><div class="progress-fill" data-width="94%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-label"><span>CI/CD & GitOps</span><span>90%</span></div>
+                    <div class="skill-label"><span>Multi-Cloud (Azure & AWS)</span><span>92%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" data-width="92%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label"><span>GitOps & CI/CD Pipelines</span><span>90%</span></div>
                     <div class="progress-bg"><div class="progress-fill" data-width="90%"></div></div>
                 </div>
             </div>
@@ -145,75 +154,102 @@
                 <div class="tool-grid">
                     <span class="tool-tag">Azure Landing Zones</span> <span class="tool-tag">AWS EKS</span> <span class="tool-tag">Terraform</span>
                     <span class="tool-tag">ArgoCD</span> <span class="tool-tag">GitLab CI</span> <span class="tool-tag">Helm</span>
-                    <span class="tool-tag">Ansible</span> <span class="tool-tag">Prometheus</span> <span class="tool-tag">Grafana</span>
+                    <span class="tool-tag">Ansible</span> <span class="tool-tag">Docker</span> <span class="tool-tag">Vault</span>
+                    <span class="tool-tag">Prometheus</span> <span class="tool-tag">Grafana</span> <span class="tool-tag">Cilium</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects Section -->
     <section id="projects">
         <h2 class="section-title">Key Engagements</h2>
         <div class="project-list">
             <div class="project-card" onclick="openProject('gitops')">
-                <h3>GitOps Platform Scale</h3>
-                <p>Enterprise K8s stabilization for 50+ clusters.</p>
-                <small style="color:var(--accent)">Click for Detailed P-A-I →</small>
+                <h3>GitOps Multi-Cluster Platform</h3>
+                <p>Enterprise K8s stabilization for 50+ clusters using ArgoCD.</p>
+                <small style="color:var(--accent)">View Problem-Action-Impact →</small>
             </div>
             <div class="project-card" onclick="openProject('automation')">
-                <h3>Infra Automation Portal</h3>
-                <p>Self-service automation reducing task time by 80%.</p>
-                <small style="color:var(--accent)">Click for Detailed P-A-I →</small>
+                <h3>Enterprise Infra Automation</h3>
+                <p>Self-service automation portal reducing task time by 80%.</p>
+                <small style="color:var(--accent)">View Problem-Action-Impact →</small>
+            </div>
+            <div class="project-card" onclick="openProject('migration')">
+                <h3>OEM Cloud Modernization</h3>
+                <p>Migrated on-prem monolithic apps to microservices on AWS.</p>
+                <small style="color:var(--accent)">View Problem-Action-Impact →</small>
             </div>
         </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Experience Section -->
     <section id="experience">
         <h2 class="section-title">Professional Experience</h2>
+        
         <div class="exp-item">
             <div class="exp-header">
-                <span class="exp-role">Senior DevOps Engineer</span>
-                <span class="exp-date">2022 — Present</span>
+                <span class="exp-role">Senior DevOps Engineer (Platform Services)</span>
+                <span class="exp-date">Oct 2022 — Present</span>
             </div>
             <span class="exp-company">Phoenix Contact India</span>
             <ul class="exp-bullets">
-                <li>Managing platform availability for production systems to 99.9%.</li>
-                <li>Accelerated cloud deployments by 80% via Terraform standardization.</li>
+                <li>Managed platform availability for production systems to over 99.9%.</li>
+                <li>Accelerated cloud deployments by ~70-80% via end-to-end Terraform (IaC) standardization.</li>
+                <li>Implemented Zero-Trust security via Azure Landing Zones and AWS multi-account governance.</li>
+                <li>Leading a team of 7 engineers to improve productivity by 30% through Agile transformation.</li>
             </ul>
         </div>
-        <!-- Add more experience items as per CV -->
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-role">Cloud Solutions Architect</span>
+                <span class="exp-date">Nov 2018 — Oct 2022</span>
+            </div>
+            <span class="exp-company">Dynacons Systems and Solutions Ltd</span>
+            <ul class="exp-bullets">
+                <li>Architected modular infra using Terraform, cutting provisioning time by 60%.</li>
+                <li>Operated EKS & AKS clusters, improving reliability and recovery time by 40%.</li>
+                <li>Migrated on-prem workloads to AWS and Azure, MODERNIZING legacy systems.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-role">Senior IT & Infrastructure Engineer</span>
+                <span class="exp-date">Aug 2012 — Nov 2018</span>
+            </div>
+            <span class="exp-company">Interlink Services / Precision Tech</span>
+            <ul class="exp-bullets">
+                <li>Managed global virtualization infra across 100+ servers (VMware/Windows).</li>
+                <li>Spearheaded disaster recovery and enterprise backup strategies.</li>
+            </ul>
+        </div>
     </section>
 
-    <!-- Full Certifications Gallery -->
+    <!-- Certifications Section -->
     <section id="certs">
         <h2 class="section-title">Certifications & Training</h2>
         <div class="cert-badge-grid">
-            <!-- Instructions: Replace the src with your actual badge images -->
             <div class="cert-card">
                 <img src="https://iconify.design" alt="AZ-305">
-                <p>AZ-305 Solutions Architect Expert</p>
-                <span>Microsoft Certified</span>
+                <p>Azure Solutions Architect Expert (AZ-305)</p>
             </div>
             <div class="cert-card">
                 <img src="https://iconify.design" alt="AWS-SAP">
-                <p>AWS Solutions Architect</p>
-                <span>Amazon Web Services</span>
+                <p>AWS Solutions Architect Associate</p>
             </div>
             <div class="cert-card">
                 <img src="https://iconify.design" alt="CKA">
-                <p>CKA / CKS</p>
-                <span>Cloud Native Computing Foundation</span>
+                <p>CKA / CKS (KodeKloud)</p>
             </div>
             <div class="cert-card">
                 <img src="https://iconify.design" alt="AZ-400">
-                <p>AZ-400 DevOps Engineer Expert</p>
-                <span>Microsoft Certified</span>
+                <p>Azure DevOps Engineer Expert (AZ-400)</p>
             </div>
             <div class="cert-card">
                 <img src="https://iconify.design" alt="ITIL">
                 <p>ITIL v4 Foundation</p>
-                <span>Axelos</span>
             </div>
         </div>
     </section>
@@ -233,32 +269,36 @@
             <div style="margin-top:2rem;">
                 <p>📧 <strong>Email:</strong> Kapilbansal380@gmail.com</p>
                 <p style="margin-top:1rem;">📞 <strong>Phone:</strong> +91 99996 21736</p>
-                <p style="margin-top:1rem;">🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" style="color:var(--accent)">Profile Link</a></p>
+                <p style="margin-top:1rem;">🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" style="color:var(--accent)">Visit Profile</a></p>
             </div>
         </div>
     </div>
 
     <script>
-        // Data for Project Details
         const projectData = {
             gitops: {
                 title: "GitOps Multi-Cluster Platform",
-                problem: "Managing 50+ clusters led to config drift and manual errors.",
-                action: "Implemented ArgoCD + GitLab CI with standardized Helm charts.",
-                impact: "70% reduction in manual effort and zero-downtime releases."
+                problem: "Managing 50+ K8s clusters led to configuration drift and high manual overhead.",
+                action: "Architected GitOps (ArgoCD + GitLab CI) with standardized Helm charts and Keycloak RBAC.",
+                impact: "Reduced manual effort by 70% and achieved zero-downtime releases."
             },
             automation: {
                 title: "Enterprise Infra Automation",
-                problem: "Fragmented IT ops led to slow, inconsistent server provisioning.",
-                action: "Developed Ansible + Rundeck self-service orchestration portal.",
-                impact: "80% reduction in execution time for standardized tasks."
+                problem: "Fragmented IT operations across hybrid clouds led to 80% manual provisioning overhead.",
+                action: "Built Ansible + Rundeck self-service portal for standardized task orchestration.",
+                impact: "80% reduction in task execution time and improved compliance."
+            },
+            migration: {
+                title: "OEM Cloud Modernization",
+                problem: "Legacy monolithic on-prem apps causing slow release cycles and instability.",
+                action: "Containerized apps into Docker/Helm and migrated to AWS EKS using Terraform.",
+                impact: "Reduced infrastructure costs by $1.2M and improved uptime to 99.99%."
             }
         };
 
         function openProject(key) {
             const data = projectData[key];
-            const body = document.getElementById('modal-body');
-            body.innerHTML = `
+            document.getElementById('modal-body').innerHTML = `
                 <h2 style="color:var(--accent); margin-bottom:1.5rem;">${data.title}</h2>
                 <p><strong>PROBLEM:</strong> ${data.problem}</p><br>
                 <p><strong>ACTION:</strong> ${data.action}</p><br>
@@ -271,7 +311,7 @@
         function toggleModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
         function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
 
-        // Skill Bar Animation
+        // Intersection Observer for Skill Bars
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if(entry.isIntersecting) { entry.target.style.width = entry.target.getAttribute('data-width'); } });
         }, { threshold: 0.5 });
