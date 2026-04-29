@@ -1,0 +1,17 @@
+:root {
+  --bg:#05050f;
+  --panel:#0b0b1e;
+  --accent:#8b5cf6;
+  --muted:#9ca3af;
+  --text:#e5e7eb;
+  --border:#1f2937;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui;
+  background: radial-gradient(circle at right,#2b1055,var(--bg) 60%);
+  color: var(--text);
+}
+
+/* rest of styles */
