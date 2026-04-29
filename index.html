@@ -284,7 +284,13 @@
                 title: "GitOps Multi-Cluster Platform",
                 problem: "Managing 50+ Kubernetes clusters led to high operational overhead (manual effort), configuration drift, and increased risk of deployment failures and downtime. ",
                 action: "Architected GitOps (ArgoCD + GitLab CI) with standardized Helm charts and Keycloak-based RBAC; implemented Blue-Green deployments for controlled releases.",
-                impact: "Reduced manual effort by 70% and achieved zero-downtime releases."
+                impact: `
+                    <ul style="padding-left: 1.5rem; color: var(--muted); font-size: 0.95rem;">
+                        <li>Reduced manual effort by ~70% and improved deployment consistency across clusters.</li>
+                        <li>Achieved zero-downtime releases and reduced deployment failures by ~50%.</li>
+                        <li>Improved deployment speed (2–3x) and strengthened security and governance.</li>
+                   </ul> 
+                   `
             },
             automation: {
                 title: "Enterprise Infra Automation",
@@ -295,7 +301,7 @@
                         <li>Reduced manual effort by ~70% and improved deployment consistency across clusters.</li>
                         <li>Achieved zero-downtime releases and reduced deployment failures by ~50%.</li>
                         <li>Improved deployment speed (2–3x) and strengthened security and governance.</li>
-                   </ul>        `
+                   </ul> `
             },
             migration: {
                 title: "OEM Cloud Modernization",
