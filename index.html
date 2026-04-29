@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapil Bansal | Senior DevOps Portfolio</title>
+    <title>Kapil Bansal</title>
     <style>
         :root {
             --bg: #0b0214;
@@ -119,7 +119,7 @@
     <section class="hero" id="home">
         <div class="hero-text">
             <h1>Senior DevOps Leader</h1>
-            <p>12+ years of production experience orchestrating high-availability platforms, GitOps automation, and enterprise Cloud-native transformations.</p>
+            <p>Senior DevOps Engineer with 12+ years of experience in Azure, AWS, Kubernetes, Terraform, GitOps, and SRE practices, driving high availability, cost optimization, faster delivery, and reduced operational risk across large-scale production environments. </p>
         </div>
         <div class="profile-container">
             <!-- Ensure your photo is named profile.jpg -->
@@ -133,29 +133,33 @@
         <div class="skills-container">
             <div class="skill-box">
                 <div class="skill-item">
-                    <div class="skill-label"><span>Kubernetes Ecosystem (EKS/AKS/Self-Managed)</span><span>95%</span></div>
+                    <div class="skill-label"><span>Kubernetes(EKS/AKS/Self-Managed)</span><span>95%</span></div>
                     <div class="progress-bg"><div class="progress-fill" data-width="95%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-label"><span>Infrastructure as Code (Terraform/Terragrunt)</span><span>94%</span></div>
+                    <div class="skill-label"><span>Infrastructure as Code (Terraform/Ansible)</span><span>94%</span></div>
                     <div class="progress-bg"><div class="progress-fill" data-width="94%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-label"><span>Multi-Cloud (Azure & AWS)</span><span>92%</span></div>
-                    <div class="progress-bg"><div class="progress-fill" data-width="92%"></div></div>
+                    <div class="skill-label"><span>Multi-Cloud (Azure & AWS)</span><span>94%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" data-width="94%"></div></div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-label"><span>GitOps & CI/CD Pipelines</span><span>90%</span></div>
-                    <div class="progress-bg"><div class="progress-fill" data-width="90%"></div></div>
+                    <div class="skill-label"><span>GitOps & CI/CD Pipelines</span><span>92%</span></div>
+                    <div class="progress-bg"><div class="progress-fill" data-width="92%"></div></div>
                 </div>
             </div>
             <div class="tooling-box">
                 <h3>Tooling & Platforms</h3>
                 <div class="tool-grid">
-                    <span class="tool-tag">Azure Landing Zones</span> <span class="tool-tag">AWS EKS</span> <span class="tool-tag">Terraform</span>
+                    <span class="tool-tag">Azure Landing Zones</span> <span class="tool-tag">EKS</span> <span class="tool-tag">Terraform</span>
                     <span class="tool-tag">ArgoCD</span> <span class="tool-tag">GitLab CI</span> <span class="tool-tag">Helm</span>
                     <span class="tool-tag">Ansible</span> <span class="tool-tag">Docker</span> <span class="tool-tag">Vault</span>
                     <span class="tool-tag">Prometheus</span> <span class="tool-tag">Grafana</span> <span class="tool-tag">Cilium</span>
+                    <span class="tool-tag">Jenkins</span> <span class="tool-tag">AKS</span> <span class="tool-tag">Calico</span>
+                    <span class="tool-tag">NKP</span> <span class="tool-tag">Helm</span> <span class="tool-tag">FluxCD</span>
+                    <span class="tool-tag">Loki</span> <span class="tool-tag">Github-Actions</span> <span class="tool-tag">Linux</span>
+                    <span class="tool-tag">ELK</span> <span class="tool-tag">Azure</span> <span class="tool-tag">SQL</span>
                 </div>
             </div>
         </div>
@@ -269,7 +273,7 @@
             <div style="margin-top:2rem;">
                 <p>📧 <strong>Email:</strong> Kapilbansal380@gmail.com</p>
                 <p style="margin-top:1rem;">📞 <strong>Phone:</strong> +91 99996 21736</p>
-                <p style="margin-top:1rem;">🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" style="color:var(--accent)">Visit Profile</a></p>
+                <p style="margin-top:1rem;">🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kapil-bansal-125101243/" target="_blank" style="color:var(--accent)">Visit Profile</a></p>
             </div>
         </div>
     </div>
@@ -278,15 +282,20 @@
         const projectData = {
             gitops: {
                 title: "GitOps Multi-Cluster Platform",
-                problem: "Managing 50+ K8s clusters led to configuration drift and high manual overhead.",
-                action: "Architected GitOps (ArgoCD + GitLab CI) with standardized Helm charts and Keycloak RBAC.",
+                problem: "Managing 50+ Kubernetes clusters led to high operational overhead (manual effort), configuration drift, and increased risk of deployment failures and downtime. ",
+                action: "Architected GitOps (ArgoCD + GitLab CI) with standardized Helm charts and Keycloak-based RBAC; implemented Blue-Green deployments for controlled releases.",
                 impact: "Reduced manual effort by 70% and achieved zero-downtime releases."
             },
             automation: {
                 title: "Enterprise Infra Automation",
                 problem: "Fragmented IT operations across hybrid clouds led to 80% manual provisioning overhead.",
                 action: "Built Ansible + Rundeck self-service portal for standardized task orchestration.",
-                impact: "80% reduction in task execution time and improved compliance."
+                impact: `
+                    <ul style="padding-left: 1.5rem; color: var(--muted); font-size: 0.95rem;">
+                        <li>Reduced manual effort by ~70% and improved deployment consistency across clusters.</li>
+                        <li>Achieved zero-downtime releases and reduced deployment failures by ~50%.</li>
+                        <li>Improved deployment speed (2–3x) and strengthened security and governance.</li>
+                   </ul>        `
             },
             migration: {
                 title: "OEM Cloud Modernization",
