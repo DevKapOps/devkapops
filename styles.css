@@ -1,57 +1,214 @@
 :root {
-  --bg:#05050f;
-  --panel:#0b0b1e;
-  --accent:#8b5cf6;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --border:#1f2937;
+  --bg: #05050f;
+  --panel: #0b0b1e;
+  --panel-soft: #0f1228;
+  --accent: #8b5cf6;
+  --accent-soft: #a78bfa;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Inter, system-ui;
-  background: radial-gradient(circle at right,#2b1055,var(--bg) 60%);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont;
+  background: radial-gradient(circle at right, #2b1055, var(--bg) 60%);
   color: var(--text);
+  line-height: 1.6;
 }
 
-nav {
-  background: rgba(5,5,15,.85);
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(5, 5, 15, 0.88);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
 
-.nav {
+.nav-inner {
   max-width: 1200px;
   margin: auto;
-  padding: 18px;
+  padding: 18px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-.links a {
-  margin: 0 12px;
+.brand {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #c7d2fe;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  margin: 0 16px;
+  font-size: 0.95rem;
   color: var(--muted);
+  text-decoration: none;
 }
 
-.contact-btn {
-  background: linear-gradient(135deg,var(--accent),#a78bfa);
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
   color: #05050f;
   padding: 10px 22px;
   border-radius: 999px;
   font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 24px rgba(139,92,246,0.5);
 }
 
-.container {
+.btn-secondary {
+  border: 1px solid var(--border);
+  padding: 10px 22px;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 820px;
+  padding: 0 24px;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 4.4rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.section {
   max-width: 1100px;
   margin: auto;
-  padding: 80px 24px;
+  padding: 90px 24px;
 }
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 28px;
+}
+
+/* ---------------- SKILLS ---------------- */
+
+.skills-grid {
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px;
+}
+
+.skill-item {
+  margin-bottom: 24px;
+}
+
+.skill-item span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.progress {
+  height: 8px;
+  background: #111;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #22d3ee);
+}
+
+/* ---------------- PROJECTS ---------------- */
 
 .project-card {
   display: block;
-  padding: 18px;
-  margin-bottom: 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  padding: 24px;
   background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  margin-bottom: 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 32px rgba(139,92,246,0.25);
+}
+
+.project-detail {
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px;
+}
+
+.project-detail ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.project-detail li {
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+/* ---------------- ENGAGEMENTS ---------------- */
+
+.engagements {
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px;
+}
+
+.engagements li {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
