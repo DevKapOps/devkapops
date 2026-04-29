@@ -5,182 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kapil Bansal | Senior DevOps Engineer</title>
 
-  <!-- Google Font -->
-  https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #070714;
-      --bg-dark: #05050f;
-      --card: #0d0d1f;
-      --accent: #8b5cf6;
-      --accent-soft: #a78bfa;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at right, #2b1055, var(--bg-dark) 55%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    nav {
-      position: sticky; top: 0;
-      background: rgba(7,7,20,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      z-index: 10;
-    }
-
-    .nav-container {
-      max-width: 1200px; margin: auto; padding: 18px 24px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-
-    .logo { font-weight: 700; letter-spacing: .15em; color: #c7d2fe; }
-    .nav-links a { margin: 0 16px; font-size: .95rem; color: var(--muted); }
-    .nav-links a:hover { color: var(--text); }
-
-    .cta {
-      padding: 10px 22px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-      color: #05050f; font-weight: 600;
-      box-shadow: 0 0 35px #8b5cf666;
-    }
-
-    .container { max-width: 1100px; margin: auto; padding: 90px 24px; }
-    h2 { font-size: 2.3rem; margin-bottom: 14px; }
-    p.sub { color: var(--muted); margin-bottom: 40px; }
-
-    header { min-height: 90vh; display: flex; align-items: center; }
-    .hero h1 { font-size: clamp(3rem,6vw,4.5rem); }
-    .hero span { color: var(--accent-soft); }
-    .hero p { margin-top: 24px; max-width: 760px; color: var(--muted); }
-
-    .hero-actions { margin-top: 36px; display: flex; gap: 20px; }
-
-    section { animation: reveal 1s ease both; }
-    @keyframes reveal { from { opacity:0; transform:translateY(40px);} to{opacity:1;} }
-
-    .skills { display: flex; flex-wrap: wrap; gap: 14px; }
-    .pill { padding: 11px 18px; border-radius: 999px; border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(139,92,246,.25), rgba(139,92,246,.05));
-      box-shadow: 0 0 18px #8b5cf633; font-size: .9rem; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 30px; }
-    .card { background: linear-gradient(120deg, rgba(139,92,246,.18), var(--card) 40%);
-      border:1px solid var(--border); border-radius:20px; padding:26px; }
-
-    .card:hover { transform: translateY(-6px); box-shadow:0 0 40px #8b5cf655; transition:.3s; }
-
-    .timeline { display: grid; gap: 28px; }
-    .timeline-card { position:relative; padding:28px 30px; border-radius:18px; background: linear-gradient(120deg, rgba(139,92,246,.18), var(--card) 40%); border:1px solid var(--border); }
-    .timeline-card::before { content:''; position:absolute; left:0; top:0; width:6px; height:100%; background:linear-gradient(var(--accent),transparent); }
-    .role { color: var(--accent-soft); margin-bottom:10px; font-size:.9rem; }
-
-    footer { border-top:1px solid var(--border); padding:40px 24px; text-align:center; color:var(--muted); font-size:.85rem; }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <div class="nav-container">
+  <div class="nav">
     <div class="logo">KAPIL BANSAL</div>
-    <div class="nav-links">
+    <div class="links">
       <a href="#summary">Summary</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#engagements">Engagements</a>
       <a href="#experience">Experience</a>
-      <a href="#certs">Certifications</a>
     </div>
-    <a href="#contact" class="cta">Contact</a>
+    <a class="contact-btn" href="https://www.linkedin.com/in/kapil-bansal-125101243/" target="_blank">CONTACT</a>
   </div>
 </nav>
 
-<header class="container hero" id="summary">
-  <div>
-    <h1>Senior <span>DevOps Engineer</span></h1>
-    <p>DevOps & Platform Engineer with 12+ years of experience across Azure, AWS, Kubernetes, Terraform, GitOps and SRE practices. Proven expertise in building highly available, secure and cost-optimized cloud-native platforms at scale.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="cta">View Projects</a>
-      <a href="Kapil_DevOps_Resume_Apr26.pdf" class="cta">Download Resume</a>
-    </div>
-  </div>
-</header>
-
-<section class="container" id="skills">
-  <h2>Core Skills</h2>
-  <p class="sub">Cloud, Kubernetes, CI/CD, Security & Automation</p>
-  <div class="skills">
-    <span class="pill">AWS</span><span class="pill">Azure</span><span class="pill">Kubernetes (EKS, AKS)</span><span class="pill">Docker</span>
-    <span class="pill">Terraform</span><span class="pill">Helm</span><span class="pill">GitOps (ArgoCD)</span><span class="pill">GitLab CI</span>
-    <span class="pill">GitHub Actions</span><span class="pill">Prometheus</span><span class="pill">Grafana</span><span class="pill">Loki</span>
-    <span class="pill">Trivy</span><span class="pill">Ansible</span><span class="pill">Linux</span><span class="pill">DevSecOps</span>
-  </div>
-</section>
-
-<section class="container" id="projects">
-  <h2>Key Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>GitOps Multi-Cluster Kubernetes Platform</h3>
-      <p>Architected GitOps-based deployment across 50+ clusters using ArgoCD, Helm and Terraform, achieving zero-downtime releases and ~70% reduction in manual effort.</p>
-    </div>
-    <div class="card">
-      <h3>Enterprise Infrastructure Automation Platform</h3>
-      <p>Built self-service automation with Ansible, Rundeck and GitLab CI, reducing operational task execution time by 70–80% and improving platform reliability.</p>
-    </div>
-    <div class="card">
-      <h3>On-Prem to AWS Cloud Migration</h3>
-      <p>Led migration of legacy workloads to AWS with HA, DR, and cost optimization, achieving 99.9% availability and 50–60% ops overhead reduction.</p>
-    </div>
-  </div>
-</section>
-
-<section class="container" id="experience">
-  <h2>Experience Timeline</h2>
-  <div class="timeline">
-    <div class="timeline-card">
-      <h3>Senior DevOps Engineer – Platform Services</h3>
-      <div class="role">Phoenix Contact India · Oct 2022 – Present</div>
-      <p>Leading cloud & Kubernetes platforms, GitOps adoption, IaC standardization, DevSecOps integration, SRE practices and observability across large-scale hybrid environments.</p>
-    </div>
-    <div class="timeline-card">
-      <h3>Cloud Solutions Architect</h3>
-      <div class="role">Dynacons Systems · Nov 2018 – Oct 2022</div>
-      <p>Designed and operated AWS & Azure platforms, Kubernetes environments, CI/CD pipelines, cloud security and large-scale migrations.</p>
-    </div>
-    <div class="timeline-card">
-      <h3>Cloud Engineer / Linux Administrator</h3>
-      <div class="role">Earlier Roles · 2013 – 2018</div>
-      <p>Managed Linux systems, AWS infrastructure, monitoring, backup, recovery and incident management for production environments.</p>
-    </div>
-  </div>
-</section>
-
-<section class="container" id="certs">
-  <h2>Training & Certifications</h2>
-  <div class="skills">
-    <span class="pill">AWS SAA</span><span class="pill">AWS SAP</span><span class="pill">AWS Advanced Networking</span>
-    <span class="pill">AZ-104</span><span class="pill">AZ-204</span><span class="pill">AZ-305</span><span class="pill">AZ-400</span><span class="pill">AZ-700</span>
-    <span class="pill">CKA</span><span class="pill">CKAD</span><span class="pill">CKS</span><span class="pill">ITIL v4</span>
-  </div>
-</section>
-
-<section class="container" id="contact">
-  <h2>Contact</h2>
-  <p class="sub">Delhi, India · kapilbansal380@gmail.com · LinkedIn</p>
-</section>
-
-<footer>© 2026 Kapil Bansal · Senior DevOps Engineer</footer>
+<!-- content continues -->
 
 </body>
 </html>
+``
